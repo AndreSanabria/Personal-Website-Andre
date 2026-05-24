@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Entity Framework Core">
+  <rect width="128" height="128" rx="24" fill="#241f31"/>
+  <path d="M25 35h78v20H48v17h45v20H48v22H25V35Z" fill="#fafafa"/>
+  <path d="M99 24v23H76V24h23ZM104 72c0 18-13 32-33 32-19 0-33-14-33-32s14-32 33-32c20 0 33 14 33 32Z" fill="none" stroke="#56ff4d" stroke-width="7"/>
+</svg>

@@ -1,0 +1,35 @@
+{
+  "name": "personal-website-andre",
+  "version": "1.0.0",
+  "description": "Personal website for Andre Sanabria",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreSanabria/Personal-Website-Andre.git"
+  },
+  "keywords": [],
+  "author": "Andre Sanabria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreSanabria/Personal-Website-Andre/issues"
+  },
+  "homepage": "https://github.com/AndreSanabria/Personal-Website-Andre#readme",
+  "devDependencies": {
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^5.0.0",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^5.1.4",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.2.7",
+    "mini-css-extract-plugin": "^1.6.2",
+    "postcss": "^8.4.5",
+    "sass": "^1.87.0",
+    "sass-loader": "^17.0.0"
+  }
+}

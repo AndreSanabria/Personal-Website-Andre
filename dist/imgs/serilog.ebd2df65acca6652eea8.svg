@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Serilog">
+  <rect width="128" height="128" rx="24" fill="#241f31"/>
+  <path d="M30 38h68M30 64h68M30 90h44" stroke="#56ff4d" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="98" cy="90" r="8" fill="#fafafa"/>
+  <circle cx="30" cy="38" r="8" fill="#fafafa"/>
+  <circle cx="30" cy="64" r="8" fill="#fafafa"/>
+</svg>

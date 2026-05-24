@@ -1,0 +1,84 @@
+@use '../abstracts/variables' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  font-size: 62.5%; // 1 rem = 10 px (browser default is 16)
+
+  scroll-behavior: smooth;
+
+  @media (max-width: 1500px) {
+    font-size: 57.25%;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 50%;
+  }
+
+  @media (max-width: 770px) {
+    font-size: 43.75%;
+  }
+
+  @media (max-width: 615px) {
+    font-size: 40%;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 35%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  color: $color-text;
+  font-family: montserrat, sans-serif;
+  background-color: $color-background;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid $color-green;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

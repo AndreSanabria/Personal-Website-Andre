@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="TypeScript">
+  <rect width="128" height="128" rx="24" fill="#241f31"/>
+  <rect x="24" y="24" width="80" height="80" rx="10" fill="#56ff4d" opacity=".2" stroke="#56ff4d" stroke-width="6"/>
+  <text x="64" y="77" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#fafafa">TS</text>
+</svg>
