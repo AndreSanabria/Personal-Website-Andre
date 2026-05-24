@@ -23,10 +23,10 @@ function getSettings(mode, width) {
     return { count: 0, linkDistance: 0, linkRadius: 0 };
   }
 
-  if (width > 1600) return { count: 260, linkDistance: 70, linkRadius: 300 };
-  if (width > 1300) return { count: 230, linkDistance: 60, linkRadius: 280 };
-  if (width > 1100) return { count: 190, linkDistance: 55, linkRadius: 250 };
-  if (width > 800) return { count: 90, linkDistance: 0, linkRadius: 0 };
+  if (width > 1600) return { count: 440, linkDistance: 86, linkRadius: 390 };
+  if (width > 1300) return { count: 390, linkDistance: 78, linkRadius: 360 };
+  if (width > 1100) return { count: 330, linkDistance: 72, linkRadius: 320 };
+  if (width > 800) return { count: 140, linkDistance: 0, linkRadius: 0 };
   if (width > 600) return { count: 60, linkDistance: 0, linkRadius: 0 };
   return { count: 35, linkDistance: 0, linkRadius: 0 };
 }
@@ -64,7 +64,7 @@ export default function createParticleCanvas(selector, mode = 'hero') {
     canvas.style.width = `${canvasWidth}px`;
     canvas.style.height = `${canvasHeight}px`;
     context.setTransform(ratio, 0, 0, ratio, 0, 0);
-    context.lineWidth = 0.3;
+    context.lineWidth = 0.45;
   }
 
   function createParticle() {
@@ -73,7 +73,7 @@ export default function createParticleCanvas(selector, mode = 'hero') {
       y: Math.random() * canvasHeight,
       vx: -0.45 + Math.random() * 0.9,
       vy: -0.45 + Math.random() * 0.9,
-      radius: Math.max(Math.random() * 1.5, 0.4),
+      radius: Math.max(Math.random() * 1.8, 0.55),
       color: randomColor(),
     };
   }
@@ -84,7 +84,7 @@ export default function createParticleCanvas(selector, mode = 'hero') {
       y: mousePosition.y,
       vx: 0,
       vy: 0,
-      radius: 1.8,
+      radius: 2.4,
       color: '81, 162, 233',
       isCursor: true,
     };
@@ -118,7 +118,7 @@ export default function createParticleCanvas(selector, mode = 'hero') {
       particle.x - mousePosition.x,
       particle.y - mousePosition.y
     );
-    const opacity = Math.max(0.15, 1 - distance / (window.innerWidth / 1.8));
+    const opacity = Math.max(0.2, 1 - distance / (window.innerWidth / 1.65));
 
     context.beginPath();
     context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
@@ -143,11 +143,16 @@ export default function createParticleCanvas(selector, mode = 'hero') {
           distance <= settings.linkDistance &&
           mouseDistance <= settings.linkRadius
         ) {
-          const opacity = Math.max(0, 1 - mouseDistance / settings.linkRadius);
+          const opacity = Math.min(
+            0.95,
+            Math.max(0.22, 1.15 - mouseDistance / settings.linkRadius)
+          );
+          const hasCursor = first.isCursor || second.isCursor;
 
           context.beginPath();
           context.moveTo(first.x, first.y);
           context.lineTo(second.x, second.y);
+          context.lineWidth = hasCursor ? 0.7 : 0.45;
           context.strokeStyle = `rgba(50, 255, 4, ${opacity})`;
           context.stroke();
         }
